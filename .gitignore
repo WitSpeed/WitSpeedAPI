@@ -361,3 +361,19 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+obj
+.vscode
+.vs
+bin
+.dockerignore
+*.db
+*.db-shm
+*.db-wal
+
+appsettings.json
+appsettings.Development.json
