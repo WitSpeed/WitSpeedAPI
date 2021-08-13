@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging; 
 
 namespace WitSpeed.API
 {
@@ -21,7 +22,15 @@ namespace WitSpeed.API
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureLogging((hostingContext, logging) =>
+                    {
+                        logging.AddConfiguration(hostingContext.Configuration.GetSection("logging"));
+                        logging.AddConsole(); // Important for development
+                        logging.AddDebug();
+                        logging.AddNLog();
+                    }
+
+                    ).UseStartup<Startup>();
                 });
     }
 }
