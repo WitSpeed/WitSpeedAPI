@@ -10,7 +10,7 @@ namespace WitSpeed.Models.Models
         public string DriverId { get; set; }
         public Driver Driver { get; set; }
 
-        public string vehicleTypeId { get; set; }
+        public string VehicleTypeId { get; set; }
         public VehicleType VehicleType { get; set; }
 
         [Column(TypeName = "VARCHAR(50)")]

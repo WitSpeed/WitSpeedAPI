@@ -15,5 +15,13 @@ namespace WitSpeed.Data
         {
 
         }
+
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Driver> Drivers { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<DispatchTool> DispatchTools { get; set; }
+        public DbSet<VehicleType> VehicleTypes { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Avatar> Avatars { get; set; }
     }
 }
